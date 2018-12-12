@@ -1,18 +1,6 @@
 def GIT_BRANCH = 'master';
 def GIT_REPO = "https://github.com/cfoskin/nodejs-ex.git";
 
-
-// node('nodejs') {
-//   stage ('build'){
-//     script{
-//         sh 'echo COLUM TEST '
-//         openshiftBuild(buildConfig: 'nodejs-ex', showBuildLogs: 'true')
-//     }
-//   }
-//   stage 'deploy'
-//   openshiftDeploy(deploymentConfig: 'nodejs-ex')
-// }
-
 pipeline {
 
   agent {
@@ -49,9 +37,9 @@ pipeline {
      stage('Clone') {
       steps {
         script {
-          dir('templates') {
-            git branch:'master', url:"http://${CICD_GIT_REPO}", credentialsId: 'bitbucket-service-user'
-          }
+          // dir('templates') {
+          //   git branch:'master', url:"http://${CICD_GIT_REPO}", credentialsId: 'bitbucket-service-user'
+          // }
           dir('oc-build') {
               git branch:"${GIT_BRANCH}", url:"http://${GIT_REPO}", credentialsId: 'bitbucket-service-user'
           }
