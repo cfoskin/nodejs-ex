@@ -1,5 +1,5 @@
 def GIT_BRANCH = 'master';
-def GIT_REPO = "https://github.com/cfoskin/nodejs-ex.git";
+def GIT_REPO = "github.com/cfoskin/nodejs-ex.git";
 
 pipeline {
 
