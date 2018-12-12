@@ -41,7 +41,7 @@ pipeline {
           //   git branch:'master', url:"http://${CICD_GIT_REPO}", credentialsId: 'bitbucket-service-user'
           // }
           dir('oc-build') {
-              git branch:"${GIT_BRANCH}", url:"http://${GIT_REPO}", credentialsId: 'bitbucket-service-user'
+              git branch:"${GIT_BRANCH}", url:"https://${GIT_REPO}", credentialsId: 'bitbucket-service-user'
           }
         }
       }
